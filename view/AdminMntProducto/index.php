@@ -57,8 +57,13 @@ if (isset($_SESSION["id_usuario"])) {
                                 <thead>
                                     <tr>
                                         <th class="wd-15p">Nombre Categoria</th>
+                                        <th class="wd-15p">Nombre Producto</th>
+                                        <th class="wd-15p">Descripcion</th>
+                                        <th class="wd-15p">Precio</th>
+                                        <th class="wd-15p">Stock</th>
+                                        <th class="wd-15p">Imagen</th>
                                         <th class="wd-15p"></th>
-                                        <th class="wd-20p"></th>
+                                        <th class="wd-15p"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
