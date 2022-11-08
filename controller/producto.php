@@ -35,11 +35,16 @@ switch ($_GET["op"]) {
 
         /*TODO: Mostrar informacion campos */
     case "mostrar":
-        $datos = $categoria->get_categoria_x_id($_POST["id_categoria"]);
+        $datos = $producto->get_producto_x_id($_POST["id_producto"]);
         if (is_array($datos) == true and count($datos) <> 0) {
             foreach ($datos as $row) {
+                $output["id_producto"] = $row["id_producto"];
                 $output["id_categoria"] = $row["id_categoria"];
-                $output["nombre_categoria"] = $row["nombre_categoria"];
+                $output["nombre_prod"] = $row["nombre_prod"];
+                $output["descripcion_prod"] = $row["descripcion_prod"];
+                $output["precio"] = $row["precio"];
+                $output["stock"] = $row["stock"];
+                $output["imagen"] = $row["imagen"];
             }
             echo json_encode($output);
         }
@@ -47,18 +52,23 @@ switch ($_GET["op"]) {
 
         /*TODO: Eliminar segun ID */
     case "eliminar":
-        $categoria->delete_categoria($_POST["id_categoria"]);
+        $producto->delete_producto($_POST["id_producto"]);
         break;
 
         /*TODO:  Listar toda la informacion segun formato de datatable */
     case "listar":
-        $datos = $categoria->get_categoria();
+        $datos = $producto->get_producto();
         $data = array();
         foreach ($datos as $row) {
             $sub_array = array();
             $sub_array[] = $row["nombre_categoria"];
-            $sub_array[] = '<button type="button" onClick="editar(' . $row["id_categoria"] . ');"  id="' . $row["id_categoria"] . '" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
-            $sub_array[] = '<button type="button" onClick="eliminar(' . $row["id_categoria"] . ');"  id="' . $row["id_categoria"] . '" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-trash"></i></div></button>';
+            $sub_array[] = $row["nombre_prod"];
+            $sub_array[] = $row["descripcion_prod"];
+            $sub_array[] = $row["precio"];
+            $sub_array[] = $row["stock"];
+            $sub_array[] = $row["imagen"];
+            $sub_array[] = '<button type="button" onClick="editar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+            $sub_array[] = '<button type="button" onClick="eliminar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-trash"></i></div></button>';
             $data[] = $sub_array;
         }
 
@@ -73,11 +83,11 @@ switch ($_GET["op"]) {
 
         /*TODO:  Opcion para mostrar combobox  */
     case "combo":
-        $datos = $categoria->get_categoria();
+        $datos = $producto->get_producto();
         if (is_array($datos) == true and count($datos) > 0) {
             $html = " <option label='Seleccione'></option>";
             foreach ($datos as $row) {
-                $html .= "<option value='" . $row['id_categoria'] . "'>" . $row['nombre_categoria'] . "</option>";
+                $html .= "<option value='" . $row['id_producto'] . "'>" . $row['nombre_prod'] . "</option>";
             }
             echo $html;
         }
