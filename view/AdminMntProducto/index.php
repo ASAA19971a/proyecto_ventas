@@ -87,7 +87,7 @@ if (isset($_SESSION["id_usuario"])) {
     <?php require_once("modalmantenimiento.php"); ?>
 
     <?php require_once("../html/MainJs.php"); ?>
-    <script src="adminmntcategoria.js"></script>
+    <script src="adminnmtproducto.js"></script>
 </body>
 
 </html>

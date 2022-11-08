@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         <label for="precio" class="form-label">Precio</label>
-                        <input type="number" step="0.1" class="form-control" id="precio" name="precio"
+                        <input type="number" step="0.01" class="form-control" id="precio" name="precio"
                             placeholder="Ingrese Nombre" required>
                     </div>
                     <div class="form-group">
@@ -37,9 +37,9 @@
                             required>
                     </div>
                     <div class="form-group">
-                        <label for="nombre_categoria" class="form-label">Imagen</label>
-                        <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria"
-                            placeholder="Ingrese Nombre" required>
+                        <label for="imagen" class="form-label">Imagen</label>
+                        <input type="file" class="form-control" id="imagen" name="imagen" placeholder="Ingrese Foto"
+                            required>
                     </div>
 
 

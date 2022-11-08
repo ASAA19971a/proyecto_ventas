@@ -11,6 +11,7 @@ switch ($_GET["op"]) {
 
         /*TODO: Guardar y editar cuando se tenga el ID */
     case "guardaryeditar":
+        $img = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
         if (empty($_POST["id_producto"])) {
             $producto->insert_producto(
                 $_POST["id_categoria"],
@@ -18,7 +19,7 @@ switch ($_GET["op"]) {
                 $_POST["descripcion_prod"],
                 $_POST["precio"],
                 $_POST["stock"],
-                $_POST["imagen"]
+                $img
             );
         } else {
             $producto->update_producto(
@@ -28,7 +29,7 @@ switch ($_GET["op"]) {
                 $_POST["descripcion_prod"],
                 $_POST["precio"],
                 $_POST["stock"],
-                $_POST["imagen"]
+                $img
             );
         }
         break;
@@ -66,7 +67,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["descripcion_prod"];
             $sub_array[] = $row["precio"];
             $sub_array[] = $row["stock"];
-            $sub_array[] = $row["imagen"];
+            $sub_array[] = '<img height="100px" width="100px" src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" />';
             $sub_array[] = '<button type="button" onClick="editar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
             $sub_array[] = '<button type="button" onClick="eliminar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-trash"></i></div></button>';
             $data[] = $sub_array;
