@@ -1,0 +1,39 @@
+HTML {
+  scroll-behavior: smooth;
+}
+* {
+  transition: 0.3s ease-in-out;
+}
+
+table,
+tr,
+td {
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.abel-Item {
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: #fff;
+}
+
+.abel-Item:hover {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
+.blue {
+  background-color: rgb(5, 40, 138);
+  color: #fff;
+}
+
+#promocion {
+  background-image: url("../img/4.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
