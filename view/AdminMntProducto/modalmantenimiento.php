@@ -28,16 +28,16 @@
                     </div>
                     <div class="form-group">
                         <label for="precio" class="form-label">Precio</label>
-                        <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese Nombre"
-                            required>
+                        <input type="number" step="0.1" class="form-control" id="precio" name="precio"
+                            placeholder="Ingrese Nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="stock" class="form-label">Stock</label>
-                        <input type="text" class="form-control" id="stock" name="stock" placeholder="Ingrese Nombre"
+                        <input type="number" class="form-control" id="stock" name="stock" placeholder="Ingrese Nombre"
                             required>
                     </div>
                     <div class="form-group">
-                        <label for="nombre_categoria" class="form-label">Nombre Categoria</label>
+                        <label for="nombre_categoria" class="form-label">Imagen</label>
                         <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria"
                             placeholder="Ingrese Nombre" required>
                     </div>
