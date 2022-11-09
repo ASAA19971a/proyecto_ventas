@@ -80,16 +80,16 @@ if (isset($_SESSION["id_usuario"])) {
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-warning">
+                            <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3 id="lbltotalSucursal"></h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Sucursales registradas</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                                    <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Mas Información <i
+                                <a href="../AdminMntSucursal/" class="small-box-footer">Mas Información <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

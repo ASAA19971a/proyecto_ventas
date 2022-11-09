@@ -12,4 +12,10 @@ $(document).ready(function () {
     data = JSON.parse(data);
     $("#lbltotalProducto").html(data.total);
   });
+
+  // NOTE Total sucursales registrados
+  $.post("../../controller/sucursal.php?op=total", function (data) {
+    data = JSON.parse(data);
+    $("#lbltotalSucursal").html(data.total);
+  });
 });

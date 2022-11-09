@@ -59,6 +59,12 @@
                                 <p>Producto</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="../AdminMntSucursal/" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Sucursal</p>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>

@@ -38,9 +38,7 @@ class Sucursal extends Conectar
         $conectar = parent::Conexion();
         parent::set_names();
 
-        $sql = "SELECT count(*) as total 
-                FROM sucursal
-                WHERE estado = 1";
+        $sql = "SELECT count(*) as total FROM sucursal WHERE estado = 1";
 
         $sql = $conectar->prepare($sql);
         $sql->execute();
@@ -53,14 +51,7 @@ class Sucursal extends Conectar
         parent::set_names();
 
         $sql = "ALTER TABLE sucursal AUTO_INCREMENT=1;
-                INSERT INTO sucursal 
-                (nombre_sucursal,
-                direccion_sucursal,
-                telefono_sucursal,
-                fecha_create,
-                estado)
-                VALUES
-                (?,?,?,now(),1);";
+                INSERT INTO sucursal (nombre_sucursal, direccion_sucursal, telefono_sucursal, fecha_create, estado) VALUES (?, ?, ?, now(), 1);";
 
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre_sucursal);
