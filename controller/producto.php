@@ -109,4 +109,15 @@ switch ($_GET["op"]) {
             echo $html;
         }
         break;
+
+        // TOTAL PRODUCTOS
+    case "total":
+        $datos = $producto->get_total_productos();
+        if (is_array($datos) == true and count($datos) > 0) {
+            foreach ($datos as $row) {
+                $output["total"] = $row["total"];
+            }
+            echo json_encode($output);
+        }
+        break;
 }

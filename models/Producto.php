@@ -51,6 +51,17 @@ class Producto extends Conectar
         return $resultado = $sql->fetchAll();
     }
 
+    /*TODO: Cantidad Productos */
+    public function get_total_productos()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT count(*) as total FROM producto WHERE estado=1";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
     /*TODO: Insertar Producto */
     public function insert_producto($id_categoria, $nombre_prod, $descripcion_prod, $precio, $stock, $imagen)
     {

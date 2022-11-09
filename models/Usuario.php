@@ -94,7 +94,7 @@ class Usuario extends Conectar
         return $resultado = $sql->fetchAll();
     }
 
-    /*TODO: Cantidad de Cursos por Usuario */
+    /*TODO: Cantidad de  Usuarios */
     public function get_total_usuarios()
     {
         $conectar = parent::conexion();

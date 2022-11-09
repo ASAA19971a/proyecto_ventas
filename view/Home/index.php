@@ -73,7 +73,7 @@ if (isset($_SESSION["id_usuario"])) {
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Mas Información <i
+                                <a href="../AdminMntProducto/" class="small-box-footer">Mas Información <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
