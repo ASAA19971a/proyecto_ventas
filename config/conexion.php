@@ -29,6 +29,6 @@ class Conectar
     // Ruta principal del proyecto
     public static function ruta()
     {
-        return "http://localhost/Proyectos/ITQ_Proyectos/Proyecto_Floreria/";
+        return "http://localhost/Proyectos/ITQ_Proyectos/Proyecto_Ventas/";
     }
 }

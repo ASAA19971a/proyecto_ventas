@@ -14,8 +14,49 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+                <?php
+                if ($_SESSION["id_perfil"] == 2) {
+
+                ?>
+                <li class="nav-item">
+                    <a href="../UsuHome/" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Inicio
+                        </p>
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="../CatalogoProductos/" class="nav-link">
+                        <i class="nav-icon fas fa-images "></i>
+                        <p>Catálogo de Productos</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../Perfil/" class="nav-link">
+                        <i class="nav-icon fas fa-history "></i>
+                        <p>Historial de Compras</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../Perfil/" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-cart "></i>
+                        <p>Carrito de Compras</p>
+                    </a>
+                </li>
+
+                <?php
+                } else {
+                ?>
+
                 <li class="nav-item">
                     <a href="../Home/" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
@@ -69,7 +110,9 @@
                     </ul>
                 </li>
 
-
+                <?php
+                }
+                ?>
 
 
 

@@ -120,4 +120,32 @@ switch ($_GET["op"]) {
             echo json_encode($output);
         }
         break;
+
+
+        // Catalogo Producto
+    case "catalogo":
+        $datos = $producto->get_producto();
+        if (is_array($datos) == true and count($datos) > 0) {
+            $html = ' <div class="row"> ';
+            foreach ($datos as $row) {
+                $html .= '<div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <h3 class="card-header">' . $row["nombre_prod"] . '</h3>
+                                    <div class="card-body">
+                                    <div class="img py-4">
+                                        <img height="150px" width="150px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />
+                                    </div>
+                                    
+                                   
+                                    <a href="#" class="btn btn-success btn-block"><i class="fas fa-cart-plus mx-2"></i>Agregar</a>
+                                    </div>
+                                </div>
+                          </div>';
+            }
+
+            $html .= '</div>';
+            echo $html;
+        }
+
+        break;
 }

@@ -30,9 +30,16 @@ class Usuario extends Conectar
                     $_SESSION["apellidos"] = $resultado["apellidos"];
                     $_SESSION["correo"] = $resultado["correo"];
                     $_SESSION["id_perfil"] = $resultado["id_perfil"];
-                    /*TODO: Si todo esta correcto indexar en home */
-                    header("Location:" . Conectar::ruta() . "view/Home/");
-                    exit();
+
+                    if ($_SESSION["id_perfil"] == 1 || $_SESSION["id_perfil"] == 3) {
+                        /*TODO: Si todo esta correcto indexar en home */
+                        header("Location:" . Conectar::ruta() . "view/Home/");
+                        exit();
+                    } else {
+                        /*TODO: Si todo esta correcto indexar en home */
+                        header("Location:" . Conectar::ruta() . "view/UsuHome/");
+                        exit();
+                    }
                 } else {
                     /*TODO: En caso no coincidan el usuario o la contraseña */
                     header("Location:" . conectar::ruta() . "view/Login/index.php?m=1");
