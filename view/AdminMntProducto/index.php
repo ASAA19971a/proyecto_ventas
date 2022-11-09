@@ -53,6 +53,7 @@ if (isset($_SESSION["id_usuario"])) {
                                 <i class="fa fa-plus-square mg-r-10"></i> Nuevo Registro</button>
                         </div>
                         <div class="card-body">
+
                             <table id="producto_data" class="table display responsive nowrap">
                                 <thead>
                                     <tr>
@@ -69,6 +70,7 @@ if (isset($_SESSION["id_usuario"])) {
                                 <tbody>
                                 </tbody>
                             </table>
+
                         </div>
                         <div class="card-footer">
 

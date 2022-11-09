@@ -11,7 +11,8 @@ switch ($_GET["op"]) {
 
         /*TODO: Guardar y editar cuando se tenga el ID */
     case "guardaryeditar":
-        $img = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+        $img = fopen($_FILES["imagen"]["tmp_name"], "rb");
+
         if (empty($_POST["id_producto"])) {
             $producto->insert_producto(
                 $_POST["id_categoria"],
@@ -22,15 +23,29 @@ switch ($_GET["op"]) {
                 $img
             );
         } else {
-            $producto->update_producto(
-                $_POST["id_producto"],
-                $_POST["id_categoria"],
-                $_POST["nombre_prod"],
-                $_POST["descripcion_prod"],
-                $_POST["precio"],
-                $_POST["stock"],
-                $img
-            );
+            if (is_uploaded_file($_FILES['imagen']['tmp_name'])) {
+                // TODO  Linea codigo para guardar formato blob
+                $img = fopen($_FILES["imagen"]["tmp_name"], "rb");
+
+                $producto->update_producto_imagen(
+                    $_POST["id_producto"],
+                    $_POST["id_categoria"],
+                    $_POST["nombre_prod"],
+                    $_POST["descripcion_prod"],
+                    $_POST["precio"],
+                    $_POST["stock"],
+                    $img
+                );
+            } else {
+                $producto->update_producto(
+                    $_POST["id_producto"],
+                    $_POST["id_categoria"],
+                    $_POST["nombre_prod"],
+                    $_POST["descripcion_prod"],
+                    $_POST["precio"],
+                    $_POST["stock"]
+                );
+            }
         }
         break;
 
@@ -45,7 +60,8 @@ switch ($_GET["op"]) {
                 $output["descripcion_prod"] = $row["descripcion_prod"];
                 $output["precio"] = $row["precio"];
                 $output["stock"] = $row["stock"];
-                $output["imagen"] = $row["imagen"];
+                //  $output["imagen"] = base64_encode($row["imagen"]);
+                $output["imgEditar"] = '<img height="100px" width="100px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />';
             }
             echo json_encode($output);
         }
@@ -67,7 +83,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["descripcion_prod"];
             $sub_array[] = $row["precio"];
             $sub_array[] = $row["stock"];
-            $sub_array[] = '<img height="100px" width="100px" src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" />';
+            $sub_array[] = '<img height="100px" width="100px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />';
             $sub_array[] = '<button type="button" onClick="editar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
             $sub_array[] = '<button type="button" onClick="eliminar(' . $row["id_producto"] . ');"  id="' . $row["id_producto"] . '" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-trash"></i></div></button>';
             $data[] = $sub_array;

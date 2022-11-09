@@ -11,13 +11,15 @@ function guardaryeditar(e) {
   var formData = new FormData($("#producto_form")[0]);
   $.ajax({
     url: "../../controller/producto.php?op=guardaryeditar",
-    type: "POST",
+    method: "POST",
     data: formData,
     contentType: false,
     processData: false,
     success: function (data) {
       $("#producto_data").DataTable().ajax.reload();
       $("#modalmantenimiento").modal("hide");
+      $("#imagenEditar").hide();
+      $("#imgSalida").hide();
 
       Swal.fire({
         title: "Correcto!",
@@ -90,19 +92,23 @@ function editar(id_producto) {
   $.post(
     "../../controller/producto.php?op=mostrar",
     { id_producto: id_producto },
+
     function (data) {
+      // console.log(data);
       data = JSON.parse(data);
       $("#id_producto").val(data.id_producto);
-      $("#id_categoria").val(data.id_categoria);
+      $("#id_categoria").val(data.id_categoria).trigger("change");
       $("#nombre_prod").val(data.nombre_prod);
       $("#descripcion_prod").val(data.descripcion_prod);
       $("#precio").val(data.precio);
       $("#stock").val(data.stock);
-      $("#imagen").val(data.imagen);
+      $("#imagenEditar").html(data.imgEditar);
     }
   );
   $("#lbltitulo").html("Editar Registro");
   $("#modalmantenimiento").modal("show");
+  $("#imagenEditar").show();
+  $("#imgSalida").hide();
 }
 
 function eliminar(id_producto) {
@@ -141,6 +147,32 @@ function nuevo() {
   $("#lbltitulo").html("Nuevo Registro");
   $("#producto_form")[0].reset();
   $("#modalmantenimiento").modal("show");
+  $("#imgSalida").attr("src", "");
+  $("#imgSalida").show();
+  $("#imagenEditar").hide();
 }
 
 init();
+
+// NOTE previsualizo la imagen antes de insertar
+$(function () {
+  $("#imagen").change(function (e) {
+    addImage(e);
+  });
+
+  function addImage(e) {
+    $("#imagenEditar").hide();
+    $("#imgSalida").show();
+    var file = e.target.files[0],
+      imageType = /image.*/;
+    if (!file.type.match(imageType)) return;
+    var reader = new FileReader();
+    reader.onload = fileOnload;
+    reader.readAsDataURL(file);
+  }
+
+  function fileOnload(e) {
+    var result = e.target.result;
+    $("#imgSalida").attr("src", result);
+  }
+});

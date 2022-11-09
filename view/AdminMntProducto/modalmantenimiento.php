@@ -4,7 +4,7 @@
         <div class="modal-content ">
 
             <!-- Nombre Formulario -->
-            <form method="POST" id="producto_form">
+            <form method="POST" id="producto_form" enctype="multipart/form-data">
 
                 <div class="modal-header pd-x-20">
                     <h4 class="modal-title" id="mdltitulo"></h4>
@@ -38,8 +38,13 @@
                     </div>
                     <div class="form-group">
                         <label for="imagen" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="imagen" name="imagen" placeholder="Ingrese Foto"
-                            required>
+                        <input type="file" class="form-control" id="imagen" name="imagen">
+                    </div>
+                    <!-- Mostrar imagenes -->
+                    <div class="form-group">
+                        <img id="imgSalida" src="" height="100px" width="100px" />
+                        <div id="imagenEditar">
+                        </div>
                     </div>
 
 
