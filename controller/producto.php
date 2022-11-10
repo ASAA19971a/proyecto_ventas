@@ -60,8 +60,8 @@ switch ($_GET["op"]) {
                 $output["descripcion_prod"] = $row["descripcion_prod"];
                 $output["precio"] = $row["precio"];
                 $output["stock"] = $row["stock"];
-                //  $output["imagen"] = base64_encode($row["imagen"]);
                 $output["imgEditar"] = '<img height="100px" width="100px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />';
+                $output["imagenCatalogo"] = base64_encode($row["imagen"]);
             }
             echo json_encode($output);
         }
@@ -136,8 +136,7 @@ switch ($_GET["op"]) {
                                         <img height="150px" width="150px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />
                                     </div>
                                     
-                                   
-                                    <a href="#" class="btn btn-success btn-block"><i class="fas fa-cart-plus mx-2"></i>Agregar</a>
+                                    <button type="button" onClick="agregar(' . $row["id_producto"] . ');" class="btn btn-success btn-block"><i class="fas fa-cart-plus mx-2"></i>Agregar</button>
                                     </div>
                                 </div>
                           </div>';

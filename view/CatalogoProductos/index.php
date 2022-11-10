@@ -70,6 +70,7 @@ if (isset($_SESSION["id_usuario"])) {
     </div>
     <!-- ./wrapper -->
 
+    <?php require_once("modalproducto.php"); ?>
     <?php require_once("../html/MainJs.php"); ?>
     <script src="catalogoproductos.js"></script>
 
