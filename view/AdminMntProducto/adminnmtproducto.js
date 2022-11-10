@@ -105,8 +105,10 @@ function editar(id_producto) {
       $("#imagenEditar").html(data.imgEditar);
     }
   );
+
   $("#lbltitulo").html("Editar Registro");
   $("#modalmantenimiento").modal("show");
+  $("imagen").val("");
   $("#imagenEditar").show();
   $("#imgSalida").hide();
 }

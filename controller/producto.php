@@ -78,7 +78,7 @@ switch ($_GET["op"]) {
         $data = array();
         foreach ($datos as $row) {
             $sub_array = array();
-            $sub_array[] = $row["nombre_categoria"];
+            // $sub_array[] = $row["nombre_categoria"];
             $sub_array[] = $row["nombre_prod"];
             $sub_array[] = $row["descripcion_prod"];
             $sub_array[] = $row["precio"];

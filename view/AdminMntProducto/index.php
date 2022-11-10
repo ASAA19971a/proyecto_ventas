@@ -57,7 +57,6 @@ if (isset($_SESSION["id_usuario"])) {
                             <table id="producto_data" class="table display responsive nowrap">
                                 <thead>
                                     <tr>
-                                        <th class="wd-15p">Nombre Categoria</th>
                                         <th class="wd-15p">Nombre Producto</th>
                                         <th class="wd-15p">Descripcion</th>
                                         <th class="wd-15p">Precio</th>
