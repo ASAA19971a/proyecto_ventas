@@ -37,9 +37,15 @@
                             required>
                     </div>
                     <div class="form-group">
-                        <label for="imagen" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="imagen" name="imagen">
+                        <label for="imagen">Imagen</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imagen" name="imagen">
+                                <label class="custom-file-label" for="imagen">Choose File</label>
+                            </div>
+                        </div>
                     </div>
+
                     <!-- Mostrar imagenes -->
                     <div class="form-group">
                         <img id="imgSalida" src="" height="100px" width="100px" />
