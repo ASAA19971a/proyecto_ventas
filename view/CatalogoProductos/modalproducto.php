@@ -46,7 +46,7 @@
 
                                         <label for="cantidad" class="form-label">Cantidad</label>
                                         <input type="number" class="form-control" id="cantidad" name="cantidad" min="1"
-                                            value="1" required>
+                                            required>
                                     </div>
                                     <div class="col-6  d-flex">
                                         <button type="submit" class="btn btn-success " name="action" id="#" value="add">

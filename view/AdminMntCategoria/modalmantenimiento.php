@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label for="nombre_categoria" class="form-label">Nombre Categoria</label>
                         <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria"
-                            placeholder="Ingrese Nombre" required>
+                            placeholder="Ingrese Categoria" required>
                     </div>
 
                 </div>

@@ -20,10 +20,12 @@ function agregar(id_producto) {
       $("#descripcion_producto").html(data.descripcion_prod);
       $("#precio").html("$ " + data.precio);
       $("#stock").html(data.stock);
+      $("#cantidad").val(1);
       $("#imagenCatalogo").attr(
         "src",
         "data:image/jpg;base64," + data.imagenCatalogo
       );
+      $("#cantidad").attr("max", data.stock);
     }
   );
   $("#lbltitulo").html("Agregar Producto");
