@@ -60,7 +60,12 @@
                     </a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a onclick="verCarrito()" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-cart "></i>
+                        <p>Carrito de Compras</p>
+                    </a>
+                </li>
 
                 <?php
 

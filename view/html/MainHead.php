@@ -14,3 +14,5 @@
 <link rel="stylesheet" href="../../public/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+
+<!-- <link rel="stylesheet" href="../../public/css/estilos.css"> -->

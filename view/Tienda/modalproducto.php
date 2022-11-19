@@ -2,7 +2,7 @@
 <div id="modalproducto" class="modal fade">
     <div class="modal-dialog modal-lg " role="document">
         <div class="modal-content ">
-            <form method="POST" id="categoria_form">
+            <form method="POST" id="catalogo_form">
                 <div class="modal-header pd-x-20">
                     <h4 class="modal-title" id="lbltitulo"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -43,6 +43,10 @@
                                 <div class="row">
                                     <div class=" col-6 form-group">
                                         <input type="hidden" id="id_producto" name="id_producto">
+                                        <input type="hidden" id="input_precio" name="input_precio">
+                                        <input type="hidden" id="input_nombre_prod" name="input_nombre_prod">
+                                        <input type="hidden" id="input_descripcion" name="input_descripcion">
+                                        <input type="hidden" id="input_stock" name="input_stock">
 
                                         <label for="cantidad" class="form-label">Cantidad</label>
                                         <input type="number" class="form-control" id="cantidad" name="cantidad" min="1"

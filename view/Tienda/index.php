@@ -17,9 +17,9 @@ if (isset($_SESSION["id_usuario"])) {
 
         <?php require_once("../html/Preloader.php"); ?>
 
-        <?php require_once("../html/MainHeader.php"); ?>
+        <?php require_once("../html/MainHeaderCart.php"); ?>
 
-        <?php require_once("../html/MainMenu.php"); ?>
+        <?php require_once("../html/MainMenuCart.php"); ?>
 
 
         <!-- Content Wrapper. Contains page content -->
@@ -71,8 +71,9 @@ if (isset($_SESSION["id_usuario"])) {
     <!-- ./wrapper -->
 
     <?php require_once("modalproducto.php"); ?>
+    <?php require_once("modalcarrito.php"); ?>
     <?php require_once("../html/MainJs.php"); ?>
-    <script src="catalogoproductos.js"></script>
+    <script src="tienda.js"></script>
 
 </body>
 

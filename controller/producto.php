@@ -128,14 +128,13 @@ switch ($_GET["op"]) {
         if (is_array($datos) == true and count($datos) > 0) {
             $html = ' <div class="row"> ';
             foreach ($datos as $row) {
-                $html .= '<div class="col-sm-6 col-md-4">
+                $html .= '<div id="prod_ver" class="col-sm-6 col-md-4">
                                 <div class="card">
                                     <h3 class="card-header">' . $row["nombre_prod"] . '</h3>
                                     <div class="card-body">
                                     <div class="img py-4">
                                         <img height="150px" width="150px" src="data:image/jpg;base64,' .  base64_encode($row["imagen"]) . '" />
                                     </div>
-                                    
                                     <button type="button" onClick="agregar(' . $row["id_producto"] . ');" class="btn btn-success btn-block"><i class="fas fa-cart-plus mx-2"></i>Agregar</button>
                                     </div>
                                 </div>
